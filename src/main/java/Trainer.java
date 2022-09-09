@@ -7,22 +7,24 @@ public class Trainer {
         getToSpeak(b);
 
         Animal a = (Animal) b; // upcasting
+
         getToSpeak(a);
 
-        Duck d2 = (Duck) a; // downcasting
+        Animal d2 = (Duck) a; // downcasting
         getToSpeak(d2);
 
         train(new Duck());
         // train(new Parrot());
 
-        Animal a2 = new Animal();
-        Bird b2 = new Bird();
 
     }
 
     private static void getToSpeak(Animal animal) {
         System.out.println(animal.speak());
     }
+
+    // When invoking a method, Java will find the most underlying object (the most exact object) and invoke the method
+    // of that object.
 
     private static void train(Bird bird) {
         Duck d = (Duck) bird;
